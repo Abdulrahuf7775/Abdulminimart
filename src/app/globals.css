@@ -1,6 +1,14 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+@theme {
+  --color-brand-50: #eff8f2;
+  --color-brand-100: #dcefe1;
+  --color-brand-600: #16834a;
+  --color-brand-700: #116b3b;
+  --color-brand-800: #105632;
+  --color-brand-900: #10472b;
+  --shadow-card: 0 8px 30px rgba(24, 39, 29, 0.07);
+}
 
 :root { color-scheme: light; }
 * { box-sizing: border-box; }

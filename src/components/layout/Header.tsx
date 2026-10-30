@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
-import { Heart, Menu, Search, ShoppingCart, Store, X } from "lucide-react";
+import { Heart, Menu, Search, ShoppingCart, Store, UserRound, X } from "lucide-react";
 import { categories } from "@/data/categories";
 import { useShop } from "@/context/ShopContext";
 
@@ -31,6 +31,9 @@ export function Header() {
             <button className="flex w-12 items-center justify-center bg-brand-700 text-white transition hover:bg-brand-800" aria-label="Search"><Search size={19} /></button>
           </form>
           <Link href="/wishlist" className="hidden items-center gap-2 text-sm font-semibold text-stone-700 hover:text-brand-700 sm:flex"><Heart size={20} /> <span className="hidden xl:inline">Wishlist</span></Link>
+          <Link href="/account" className="flex items-center gap-2 rounded-lg p-2 text-stone-700 hover:bg-brand-50 hover:text-brand-700" aria-label="Your account">
+            <UserRound size={20} /><span className="hidden text-sm font-semibold sm:inline">Account</span>
+          </Link>
           <Link href="/cart" className="relative flex items-center gap-2 rounded-lg p-2 text-stone-700 hover:bg-brand-50 hover:text-brand-700" aria-label={`Shopping cart, ${itemCount} items`}>
             <ShoppingCart size={22} /><span className="hidden text-sm font-semibold sm:inline">Cart</span>
             {itemCount > 0 && <span className="absolute -right-1 -top-1 flex h-5 min-w-5 items-center justify-center rounded-full bg-amber-400 px-1 text-[11px] font-bold text-stone-900">{itemCount}</span>}
